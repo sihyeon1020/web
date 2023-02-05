@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        $(function () {
+        //b1을 클릭했을 때 오른쪽에 있는 함수 내용을 실행해주세요!
+          $('#b1').click(function() {
+            //alert('b1클릭함.')
+            $.ajax ({
+                url: "ok.html", 
+                success : function(x) {
+                   $('#d1').html(x) 
+                }
+            })
+          })  //b1
+
+          $('#b2').click(function() {
+            $.ajax ({
+                url: "weather.html", 
+                success : function(x) {
+                   $('#d2').html(x) 
+                }
+            })
+          })  //b2
+
+        //   document.getElementById('b3')
+          $('#b3').click(function() {
+            $.ajax ({
+                url: "tour.html", 
+                success : function(x) {
+                   $('#d3').html(x) 
+                }
+            })
+          })  //b3
+
+        }); //&
+    </script>
+</head>
+<body>
+    <button id="b1">AjaxTest 받아오기</button>
+    <button id="b2">기상청정보 받아오기</button>
+    <button id="b3">여행정보 받아오기</button>
+    <hr>
+    <div id="d1" style="width: 200px; height: 150px; background:skyblue"></div>
+    <div id="d2" style="width: 200px; height: 150px; background:rgb(255, 214, 221)"></div>
+    <div id="d3" style="width: 200px; height: 150px; background:rgb(255, 240, 168)"></div>
+</body>
+</html>
